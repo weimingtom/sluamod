@@ -12,5 +12,5 @@
 * https://www.nuget.org/packages/slua-standalone  
 
 ## History  
-* 2024-02-13, replace dll with slua-1.1.1\Assets\Plugins\Slua_Managed csharp code  
+* 2024-02-13, replace slua-standalone.dll with slua-1.1.1\Assets\Plugins\Slua_Managed csharp code  
 * 2023-10-08, first sharpdevelop project backup, based on vendor/slua-standalone.1.0.67.nupkg  
