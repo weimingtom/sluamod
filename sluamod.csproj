@@ -9,9 +9,22 @@
     <AssemblyName>sluamod</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -19,7 +32,8 @@
     <DebugType>Full</DebugType>
     <Optimize>False</Optimize>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;SLUA_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -27,12 +41,10 @@
     <DebugType>None</DebugType>
     <Optimize>True</Optimize>
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;SLUA_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="slua-standalone">
-      <HintPath>dll\slua-standalone.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -50,12 +62,39 @@
     <Compile Include="Demo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SLua\Coroutine.cs" />
+    <Compile Include="SLua\Debugger\DebugInterface.cs" />
+    <Compile Include="SLua\Debugger\SLuaDebug.cs" />
+    <Compile Include="SLua\Helper.cs" />
+    <Compile Include="SLua\Logger.cs" />
+    <Compile Include="SLua\Lua3rdDLL.cs" />
+    <Compile Include="SLua\Lua3rdMeta.cs" />
+    <Compile Include="SLua\LuaArray.cs" />
+    <Compile Include="SLua\LuaDLL.cs" />
+    <Compile Include="SLua\LuaDLLWrapper.cs" />
+    <Compile Include="SLua\LuaObject.cs" />
+    <Compile Include="SLua\LuaObject_basetype.cs" />
+    <Compile Include="SLua\LuaObject_overload.cs" />
+    <Compile Include="SLua\LuaState.cs" />
+    <Compile Include="SLua\LuaSvr.cs" />
+    <Compile Include="SLua\LuaSvrGameObject.cs" />
+    <Compile Include="SLua\LuaValueType.cs" />
+    <Compile Include="SLua\LuaVarObject.cs" />
+    <Compile Include="SLua\ObjectCache.cs" />
+    <Compile Include="SLua\SLuaSetting.cs" />
+    <Compile Include="SLua\Timer.cs" />
+    <Compile Include="SLua\WeakDictionary.cs" />
     <Compile Include="TestSLua.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="slua.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SLua" />
+    <Folder Include="SLua\Debugger" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
