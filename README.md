@@ -12,4 +12,4 @@
 * https://www.nuget.org/packages/slua-standalone
 
 ## History  
-* 2023-10-08, first sharpdevelop project backup  
+* 2023-10-08, first sharpdevelop project backup, based on vendor/slua-standalone.1.0.67.nupkg  
