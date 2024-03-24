@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 # SharpDevelop 4.4
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sluamod", "sluamod.csproj", "{8AD11C77-680E-4135-B207-E22696FA8999}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sluamod_sharpdevelop", "sluamod_sharpdevelop.csproj", "{8AD11C77-680E-4135-B207-E22696FA8999}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

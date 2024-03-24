@@ -32,6 +32,7 @@ namespace sluamod
 		    void onComplete() {
 		        Console.WriteLine("complete");
            		var code = @"
+print('hello')
     local TestSLua = Slua.GetClass('sluamod.TestSLua')
     return TestSLua.DoMethod(543210543)
 ";
